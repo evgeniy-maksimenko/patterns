@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div id="peopleModule">
+		<h1>People</h1>
+		<input type="text" placeholder="name">
+		<button id="addPerson">Add Person</button>
+		<ul id="people">
+			<script id="people-template" type="text/template">
+				{{#people}}
+					<li>
+						<span>{{.}}</span>
+						<i class="del"><span class="glyphicon glyphicon-remove-circle"></span></i>
+					</li>
+				{{/people}}
+			</script>
+		</ul>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+	
+	<script src="common.js"></script>
+</body>
+</html>
