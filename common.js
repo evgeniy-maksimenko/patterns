@@ -6,18 +6,16 @@ var people = (function() {
 	var $button = $el.find('button');
 	var template = $el.find("#people-template").html();
 
-	$button.on('click', addPerson);
+	$button.on('click', createPerson);
 	$ul.delegate('i.del', 'click', deletePerson);
 
 	_render();
 
 	function _render() {
-		$ul.html(Mustache.render(template, {
-			people: people
-		}));
+		$ul.html(Mustache.render(template, {people: people}));
 	}
 
-	function addPerson(val) {
+	function createPerson(val) {
 		var name = (typeof val === "string") ? val : $input.val();
 		people.push(name);
 		_render();
@@ -37,7 +35,7 @@ var people = (function() {
 	}
 
 	return {
-		addPerson: addPerson,
+		createPerson: createPerson,
 		deletePerson: deletePerson
 	};
 })();
